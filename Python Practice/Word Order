@@ -15,3 +15,18 @@ for w in list1:
 
 list3 = list(d1.values())
 print (" ".join(str(i) for i in list3))
+
+# But it showed runtime error. Below is the correct solution
+
+from collections import defaultdict
+
+n = int(input())
+list1 = []
+d1 = defaultdict(int)
+for i in range(n):
+    word = input()
+    d1[word] += 1
+
+print (len(d1.keys()))
+list3 = list(d1.values())
+print (" ".join(str(i) for i in list3))
