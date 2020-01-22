@@ -1,0 +1,34 @@
+https://www.hackerrank.com/challenges/piling-up/problem?isFullScreen=true
+
+# My solution (timed out)
+t = int(input())
+case1 = []
+for _ in range(t):
+    n1 = int(input())
+    case1 = list(map(int,input().strip().split()))[:n1]
+    l = len(case1)
+    while l>0:
+        if (case1[0] == max(case1)):
+            case1.pop(0)
+        elif (case1[l-1] == max(case1)):
+            case1.pop(l-1)
+        else:
+            break
+        l=len(case1)
+    if l==0:
+        print ("Yes")
+    else:
+        print ("No")
+        
+
+# Efficient solution
+for t in range(int(input())):
+    input()
+    lst = [int(i) for i in input().split()]
+    min_list = lst.index(min(lst))
+    left = lst[:min_list]
+    right = lst[min_list+1:]
+    if left == sorted(left,reverse=True) and right == sorted(right):
+        print("Yes")
+    else:
+        print("No")
