@@ -1,0 +1,17 @@
+https://www.hackerrank.com/challenges/word-order/problem?isFullScreen=true
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+list1 = []
+d1 = {}
+for _ in range(n):
+    word = str(input())+"\n"
+    list1.append(word)
+
+list2 = list( dict.fromkeys(list1))
+print (len(list2))
+for w in list1:
+    d1[w] = list1.count(w)
+
+list3 = list(d1.values())
+print (" ".join(str(i) for i in list3))
